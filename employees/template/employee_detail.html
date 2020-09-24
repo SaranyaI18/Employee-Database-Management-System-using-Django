@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="card h-100">
+
+				<h2 class="card-header"> {{employee.First_Name}} {{employee.Last_Name}} </h2>
+				<hr>
+  					<div class="card-body">
+
+						<p><strong>Email ID:</strong> {{employee.Email_id}}</p>
+						
+						<p><strong>Phone Number:</strong> {{employee.Phone}}</p>
+						
+						<p><strong>Gender:</strong> {{employee.Gender}}</p>
+						
+						<p><strong>Address:</strong> {{employee.Address}}</p>
+						
+						<p><strong>Job:</strong> 
+
+						{% for job in employee.job.all %}
+
+						<em> {{job.name}}</em>
+
+						{% endfor %} </p>
+						
+						<p><strong>Date of Birth:</strong> {{employee.DOB }}</p>
+
+</div>
+	</div>
+		</div>
+			</div>
+
+					</div>
+
+{% endblock %}
